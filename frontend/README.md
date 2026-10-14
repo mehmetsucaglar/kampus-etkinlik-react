@@ -1,4 +1,6 @@
 
+https://kampus-etkinlik-react.vercel.app/
+
 # Kampüs Etkinlikleri (Sprint 4 - React & TypeScript)
 
 Bu proje, daha önce temel HTML/JS ile hazırlanan Kampüs Etkinlikleri uygulamasının React, TypeScript ve Vite kullanılarak yeniden yapılandırılmış halidir.
