@@ -1,0 +1,233 @@
+/* 2416501032 */
+:root {
+  --no: 2416501032;
+  --ton: 72; /* 2416501032 % 360 = 72 */
+  --renk-ana: hsl(var(--ton) 65% 38%);
+  --renk-ana-hover: hsl(var(--ton) 65% 28%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  --renk-kart: #ffffff;
+  --renk-yazi: #222222;
+  --renk-gri: #555555;
+  --renk-kenarlik: #dedede;
+  --renk-hata: #d32f2f;
+
+  /* Son hane: 2 -> Tahoma */
+  --font: Tahoma, sans-serif;
+
+  --bosluk-s: 0.5rem;
+  --bosluk-m: 1rem;
+  --bosluk-l: 1.5rem;
+  --kose: 8px;
+}
+
+/* Sıfırlama ve Temel Ayarlar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--renk-zemin);
+  color: var(--renk-yazi);
+  line-height: 1.5;
+  padding: var(--bosluk-m);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header & Navigasyon */
+header {
+  margin-bottom: var(--bosluk-l);
+  border-bottom: 2px solid var(--renk-ana);
+  padding-bottom: var(--bosluk-m);
+}
+
+header h1 {
+  font-size: 1.75rem;
+  color: var(--renk-ana);
+  margin-bottom: var(--bosluk-s);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bosluk-s);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--renk-ana);
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: var(--kose);
+  background: rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  min-height: 40px;
+  line-height: 24px;
+}
+
+nav a:hover, nav a.active {
+  background: var(--renk-ana);
+  color: #ffffff;
+}
+
+/* Kartlar ve Grid Yapısı (Öncelik: Mobil Tek Sütun) */
+.etkinlik-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+  margin: var(--bosluk-m) 0;
+}
+
+.etkinlik-kart {
+  background: var(--renk-kart);
+  border: 1px solid var(--renk-kenarlik);
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.etkinlik-kart h3 {
+  color: var(--renk-ana);
+  margin-bottom: var(--bosluk-s);
+}
+
+.etkinlik-kart p {
+  color: var(--renk-gri);
+  margin-bottom: var(--bosluk-s);
+}
+
+.btn-link, .btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+  border-radius: var(--kose);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-link {
+  color: var(--renk-ana);
+  padding-left: 0;
+}
+
+.btn-primary {
+  background: var(--renk-ana);
+  color: #ffffff;
+  min-height: 44px; /* Dokunmatik hedef boyutu */
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: var(--renk-ana-hover);
+}
+
+/* Detay Sayfası Tasarımı */
+.detay-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+  background: var(--renk-kart);
+  padding: var(--bosluk-m);
+  border-radius: var(--kose);
+  border: 1px solid var(--renk-kenarlik);
+}
+
+.detay-afis {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--kose);
+  background: #eee;
+  display: block;
+}
+
+.detay-kunye dt {
+  font-weight: bold;
+  color: var(--renk-ana);
+  margin-top: var(--bosluk-s);
+}
+
+.detay-kunye dd {
+  margin-bottom: var(--bosluk-s);
+}
+
+/* Form Tasarımı */
+form {
+  background: var(--renk-kart);
+  padding: var(--bosluk-m);
+  border-radius: var(--kose);
+  border: 1px solid var(--renk-kenarlik);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bosluk-m);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid var(--renk-kenarlik);
+  border-radius: var(--kose);
+  width: 100%;
+  background-color: #fff;
+}
+
+/* Hata Vurgusu */
+.is-invalid {
+  border: 2px solid var(--renk-hata) !important;
+  background-color: #fff6f6;
+}
+
+.error-text {
+  color: var(--renk-hata);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* ---------------------------------------------
+   RESPONSIVE: Geniş Ekranlar (Masaüstü)
+   --------------------------------------------- */
+@media (min-width: 768px) {
+  .btn-primary {
+    width: auto;
+    align-self: flex-start;
+  }
+
+  .etkinlik-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .etkinlik-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detay-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
