@@ -237,7 +237,7 @@ function App() {
       </main>
 
       <footer style={{ marginTop: "40px", paddingTop: "20px", borderTop: "1px solid var(--renk-kenarlik)", textAlign: "center", color: "var(--renk-gri)" }}>
-           <p>Ad Soyad - 2416501032</p>
+           <p>Mehmet Suçağlar - 2416501032</p>
       </footer>
     </div>
   );

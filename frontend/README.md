@@ -1,32 +1,24 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Kampüs Etkinlikleri (Sprint 4 - React & TypeScript)
 
-Currently, two official plugins are available:
+Bu proje, daha önce temel HTML/JS ile hazırlanan Kampüs Etkinlikleri uygulamasının React, TypeScript ve Vite kullanılarak yeniden yapılandırılmış halidir.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Proje Dosyaları ve Görevleri
 
-## React Compiler
+*   **`package.json`**: Proje adı, çalıştırılacak komutlar (dev, build) ve kullanılan paketlerin listesini barındırır.
+*   **`vite.config.ts`**: Vite sunucu ayarlarını ve React eklentisini içerir.
+*   **`index.html`**: Tarayıcıda açılan tek HTML dosyasıdır; içinde React'in yerleşeceği boş `div#root` etiketini tutar.
+*   **`src/main.tsx`**: React dünyasına giriş dosyasıdır, `App` bileşenini alıp DOM'daki root elementine çizer.
+*   **`src/App.tsx`**: Uygulamanın ana bileşenidir; sayfa geçişlerini (state ile), arama/filtreleme mantığını ve tüm JSX (HTML) yapısını içerir.
+*   **`src/App.css`**: Uygulamanın tüm tasarımını (renkler, grid yapısı, butonlar) belirleyen stil dosyasıdır.
+*   **`src/types/campus-event.ts`**: Etkinlik objesinin hangi alanlara sahip olması gerektiğini belirten TypeScript veri tiplerini tanımlar.
+*   **`src/data/events.ts`**: Uygulamada sergilenen sabit etkinlik verilerini (dizi olarak) tutar.
+*   **`src/utils/filter-events.ts`**: Arama, kategoriye göre filtreleme ve ID ile etkinlik bulma işlemlerini yapan saf (DOM'a dokunmayan) fonksiyonları barındırır.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Kurulum ve Çalıştırma
 
-## Expanding the Oxlint configuration
+Projeyi bilgisayarınızda çalıştırmak için sırasıyla şu komutları kullanabilirsiniz:
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+1. Bağımlılıkları yüklemek için: `npm install`
+2. Geliştirme sunucusunu başlatmak için: `npm run dev`
+3. Projeyi yayına (production) hazırlamak için: `npm run build`
